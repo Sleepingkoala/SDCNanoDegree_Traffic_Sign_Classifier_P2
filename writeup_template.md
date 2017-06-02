@@ -41,7 +41,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb). And all the outputs are included.
+You're reading it! And all the outputs are included in my Traffic_Sign_Classifier.ipynb..
 
 ### Data Set Summary & Exploration
 
@@ -188,8 +188,8 @@ Return the results of 43 classes.
 
 And the visualization of this architecture are as follows:
 
-| Layer         		  |     Description	        					        | 
-|:---------------------  :|:---------------------------------------------------:| 
+| Layer 		          |     Description 	        					    | 
+|:-----------------------:|:---------------------------------------------------:| 
 | Input         		  | 32x32x1 grayscale image   				            | 
 | Convolution1 (5,5,1,6)  | 1x1 stride, valid padding, outputs 28x28x6 	        |
 | RELU					  |												        |
@@ -235,6 +235,8 @@ My final model results were:
 
 
 My solution is kinda combination of a well known architecure and an iterative approach. 
+
+---
 
 * What was the first architecture that was tried and why was it chosen?
 
@@ -282,6 +284,8 @@ This CNN model accepts a 32x32x1 image as input.
 Return the results of 43 classes.
 
 
+---
+
 * What were some problems with the initial architecture?
 
 After lots of debugging and trials, the validation accuracy of architecture 1 stays on 0.966 and cannot be improved. Then I tried architecture 2: Multi-scale CNN(MSCNN for short,Sources: 1. Pierre Serment and Yann LeCun - "Traffic Sign Recognition with Multi-scale Convolutional Networks" IJCNN2011 2. Alex Krizhevsky, Iiya Sutskever and Geoffrey E.Hinton - "ImageNet Classification with Deep Convolutionnal Neural Networks" NIPS2012 ). The details about MSCNN are listed as follows:
@@ -322,6 +326,8 @@ This CNN model accepts a 32x32x1 image as input.
 
 Return the results of 43 classes.
 
+---
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. 
 
 The differences between modified LeNet and MSCNN are: 
@@ -332,6 +338,7 @@ The differences between modified LeNet and MSCNN are:
 
 Then my final model is modified Multi-scale CNN(modified MSCNN for short) with an adding fully-connected layer6 and a following dropout layer. The details are in question2 above. And modified MSCNN has the best performance: validation accuracy of 0.973 on traditional preprocessed training data and validation accuracy of 0.936 on the hard artifical data augmented training data.
 
+---
 
 * Which parameters were tuned? How were they adjusted and why?
 
@@ -418,6 +425,7 @@ Here is my log about the whole debugging process, including all details about ar
   - model: modified MSCNN
   - parameters: epochs:100, batch_size: 256, learning_rate: 0.0009, keep_prob: 0.5, mu:0, sigma:0.1.
 
+---
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
